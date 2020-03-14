@@ -20,12 +20,20 @@ configure do
 
   init_db
 
-  db.execute 'CREATE TABLE "leprosorium"
-   (
-     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-     "created_date" DATE,
-     "column3" TEXT
-     );'
+  db.execute 'CREATE TABLE if not exists Posts
+ (
+   "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+   "created_date" DATE,
+   "column3" TEXT
+  )'
+
+ db.execute 'CREATE TABLE if not exists Comments
+  (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "created_date" DATE,
+    "column3" TEXT,
+    post_id integer
+  )'
 end
 
 get '/' do
