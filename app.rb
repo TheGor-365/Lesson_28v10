@@ -29,7 +29,7 @@ configure do
 end
 
 get '/' do
-  erb "Leprosorium home"
+  erb :index
 end
 
 get '/new' do
