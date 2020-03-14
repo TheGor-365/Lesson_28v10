@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Leprosorium</title>
+  </head>
+  <body>
+    <h2>Latest posts</h2>
+    <br>
+    <% @resusts.each do |post| %>
+      <p>
+        <%= post['content'] %>
+      </p>
+      <br>
+      <small>
+        Added at: <%= post['created_date'] %>
+      </small>
+      <br>
+      <a href="/post/<%= post['id'] %>">Comments</a>
+      <hr>
+    <% end %>
+  </body>
+</html>
